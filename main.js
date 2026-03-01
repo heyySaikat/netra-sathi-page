@@ -1,3 +1,21 @@
+const totalImagesToLoad = 120 + 120 + 109; // seq1 + seq2 + stickSeq
+let imagesLoaded = 0;
+
+function onImageComplete() {
+    imagesLoaded++;
+    const progressEl = document.getElementById('loadingProgress');
+    if (progressEl) {
+        progressEl.textContent = Math.floor((imagesLoaded / totalImagesToLoad) * 100) + '%';
+    }
+    if (imagesLoaded >= totalImagesToLoad) {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+            loadingScreen.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Setup Canvas Sequences
     setupHeroCanvas('hero-canvas', 120, 120);
@@ -102,6 +120,11 @@ function setupHeroCanvas(canvasId, seq1Frames, seq2Frames) {
         images[0] = firstImg;
         render();
         preloadRest();
+        onImageComplete();
+    };
+    firstImg.onerror = () => {
+        onImageComplete();
+        preloadRest();
     };
     firstImg.src = getFrameUrl(1);
 
@@ -111,7 +134,9 @@ function setupHeroCanvas(canvasId, seq1Frames, seq2Frames) {
             img.onload = () => {
                 images[i - 1] = img;
                 preloaded++;
+                onImageComplete();
             };
+            img.onerror = onImageComplete;
             img.src = getFrameUrl(i);
             images[i - 1] = img; // store reference even if not loaded yet
         }
@@ -289,6 +314,11 @@ function setupStickCanvas(canvasId, totalFrames) {
                 // Initial draw when all are loaded
                 context.drawImage(images[0], 0, 0, canvas.width, canvas.height);
             }
+            onImageComplete();
+        };
+        img.onerror = () => {
+            loadedImages++;
+            onImageComplete();
         };
         images.push(img);
     }

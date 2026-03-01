@@ -11,7 +11,12 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body style="overflow: hidden;">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <img src="favicon.png" alt="Netra Sathi Logo" class="loading-logo">
+        <div class="loading-progress" id="loadingProgress">0%</div>
+    </div>
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress-container" id="scrollProgressContainer">
         <div class="scroll-progress-bar" id="scrollProgressBar"></div>
@@ -98,7 +103,8 @@
         <section class="features-highlight-container" id="highlights">
             <h2 class="features-highlight-title">Empowering Capabilities</h2>
             <p class="features-pretext">Going far beyond the basics like OCR, object detection, and capturing photos,
-                Netra Sathi unlocks a profound new level of independence.</p>
+                <br>Netra Sathi unlocks a profound new level of independence.
+            </p>
             <div class="features-grid">
                 <!-- Feature 1 -->
                 <div class="feature-card">
@@ -157,6 +163,8 @@
 
         <!-- Competitor Comparison Section -->
         <section class="competitors-container" id="competitors">
+            <h2 class="features-highlight-title">How We Compare</h2>
+            <p class="features-pretext">See how Netra Sathi stacks up against other assistive devices in the market.</p>
             <div class="competitors-wrapper">
                 <table class="competitors-table">
                     <thead>
@@ -164,7 +172,7 @@
                             <th class="feature-col">Feature</th>
                             <th class="brand-col">
                                 <span class="brand-name">Netra Sathi</span>
-                                <span class="brand-badge">⭐ Our Product</span>
+                                <!-- <span class="brand-badge">⭐ Our Product</span>     -->
                             </th>
                             <th class="hide-mobile">OrCam MyEye</th>
                             <th>Envision Glasses</th>
@@ -268,6 +276,8 @@
 
         <!-- Pricing Section -->
         <section class="pricing-container" id="pricing">
+            <h2 class="features-highlight-title">Simple, Transparent Pricing</h2>
+            <p class="features-pretext">Choose the plan that's right for you. No hidden fees or surprise charges.</p>
             <div class="pricing-grid-wrapper">
                 <div class="pricing-grid">
                     <!-- Column 1: Feature List -->
@@ -324,17 +334,19 @@
                     </div>
                 </div>
             </div>
-            <div class="pricing-footer">
+            <!-- <div class="pricing-footer">
                 <p>Not sure which plan is right for you? <a href="#contact" class="text-brand">Contact our accessibility
                         experts</a> for a free consultation.</p>
-            </div>
+            </div> -->
         </section>
     </main>
 
     <!-- Pre-Footer -->
-    <div class="pre-footer">
-        <h2>Designed & Developed by <strong>4Bits</strong></h2>
-    </div>
+    <section id="team">
+        <div class="pre-footer">
+            <h2>Designed & Developed by <strong>4Bits</strong></h2>
+        </div>
+    </section>
 
     <!-- Main Footer -->
     <footer class="main-footer" id="contact">
@@ -353,6 +365,7 @@
                     <h4>Product</h4>
                     <ul>
                         <li><a href="#highlights">Features</a></li>
+                        <li><a href="#competitors">Competitors</a></li>
                         <li><a href="#pricing">Pricing</a></li>
                     </ul>
                 </div>
