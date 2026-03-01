@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netra Sathi | Adaptive Smart Glasses</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container" id="scrollProgressContainer">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <header class="navbar">
+        <div class="navbar-brand">
+            <img src="favicon.png" alt="Netra Sathi Logo" class="nav-logo-img">
+            <div class="logo-placeholder" id="logoTarget" style="visibility: hidden;">Netra Sathi</div>
+        </div>
+        <div class="animated-logo" id="navLogoText">Netra Sathi</div>
+        <button class="hamburger" id="hamburgerMenu" aria-label="Toggle Menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="#highlights" class="btn-nav">Features</a>
+            <a href="#competitors" class="btn-nav">Competitors</a>
+            <a href="#pricing" class="btn-nav">Pricing</a>
+            <a href="#team" class="btn-nav">Team</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Continuous Hero Sequence (Parallax Scroll) -->
+        <section class="sequence-hero" id="features">
+            <div class="sticky-container">
+                <div class="hero-content" id="heroIntro">
+                    <h2 class="hero-subtitle" id="heroSubtitle">Introducing</h2>
+                    <h1 class="hero-title" id="heroTitleGhost" style="opacity: 0;">Netra Sathi</h1>
+                </div>
+
+                <div class="scroll-indicator" id="scrollIndicator">
+                    <span class="scroll-text">Swipe down to know more</span>
+                    <div class="scroll-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+
+
+
+                <canvas id="hero-canvas"></canvas>
+
+                <!-- Pinned Typography inside hero sequence -->
+                <div class="module-text hero-dynamic-text" id="heroDynamicText">
+                    <p class="thin-text" style="font-size: 3rem;">Empowering Every Step.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosystem Master Wrapper -->
+        <div class="ecosystem-wrapper" id="ecosystem-wrapper">
+            <!-- Processing Module Layout -->
+            <!-- <section class="module-section">
+                <div class="module-container">
+                    <img src="./processing-module.png" alt="Netra Sathi Processing Module" class="module-img">
+                </div>
+            </section> -->
+
+            <!-- Stick Add-on Sequence (Parallax Scroll) -->
+            <section class="sequence-stick" id="ecosystem">
+                <div class="sticky-container">
+                    <canvas id="stick-canvas"></canvas>
+
+                    <!-- Pinned Typography inside stick sequence -->
+                    <div class="module-text stick-dynamic-text" id="stickDynamicText">
+                        <p class="thin-text" style="font-size: 3rem;">Smarter Mobility for the Visually Impaired.</p>
+                    </div>
+
+                    <!-- Pinned Typography inside stick sequence -->
+                    <div class="module-text dynamic-vision-text">
+                        <p class="thin-text">Vision Above</p>
+                        <p class="bold-text">Awareness Below</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Highlighting Features Section -->
+        <section class="features-highlight-container" id="highlights">
+            <h2 class="features-highlight-title">Empowering Capabilities</h2>
+            <p class="features-pretext">Going far beyond the basics like OCR, object detection, and capturing photos,
+                Netra Sathi unlocks a profound new level of independence.</p>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                        </svg>
+                    </div>
+                    <h3>Navigation</h3>
+                    <p>Get reliable, turn-by-turn guidance and route to nearby locations seamlessly via your earpiece.
+                        Includes <strong>Nearby Navigation</strong></p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3>UPI Payment</h3>
+                    <p>Securely scan any QR code to send instant payment requests directly to a caretaker for approval.
+                    </p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                    </div>
+                    <h3>Emergency Alert</h3>
+                    <p>Send your real-time GPS coordinates and SOS notifications to emergency services with a single
+                        voice command.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3>Messaging</h3>
+                    <p>Dictate messages to your caretaker effortlessly, and have their incoming replies read aloud to
+                        you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competitor Comparison Section -->
+        <section class="competitors-container" id="competitors">
+            <div class="competitors-wrapper">
+                <table class="competitors-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-col">Feature</th>
+                            <th class="brand-col">
+                                <span class="brand-name">Netra Sathi</span>
+                                <span class="brand-badge">⭐ Our Product</span>
+                            </th>
+                            <th class="hide-mobile">OrCam MyEye</th>
+                            <th>Envision Glasses</th>
+                            <th class="hide-mobile">eSight</th>
+                            <th>Torchit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-col">Optical Character Recognition</td>
+                            <td class="brand-col"><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-check"></span></td>
+                            <td><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Gender Detection</td>
+                            <td class="brand-col"><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Real-time Navigation</td>
+                            <td class="brand-col"><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-check-dark"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">UPI Payment Support</td>
+                            <td class="brand-col"><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Message Sending & Receiving</td>
+                            <td class="brand-col"><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Multi-language Support</td>
+                            <td class="brand-col"><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-check-dark"></span></td>
+                            <td><span class="icon-check-dark"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Smart Stick Integration</td>
+                            <td class="brand-col"><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-check-dark"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Object Detection</td>
+                            <td class="brand-col"><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-check-dark"></span></td>
+                            <td><span class="icon-check-dark"></span></td>
+                            <td class="hide-mobile"><span class="icon-check-dark"></span></td>
+                            <td><span class="icon-check-dark"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Caregiver Connectivity</td>
+                            <td class="brand-col"><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Affordable Pricing</td>
+                            <td class="brand-col"><span class="icon-check"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-cross-dark"></span></td>
+                            <td class="hide-mobile"><span class="icon-cross-dark"></span></td>
+                            <td><span class="icon-check-dark"></span></td>
+                        </tr>
+                        <tr class="price-row">
+                            <td class="feature-col">Price</td>
+                            <td class="brand-col"><span class="price-val brand">₹6,000+</span></td>
+                            <td class="hide-mobile"><span class="price-val red">₹4,00,000+</span></td>
+                            <td><span class="price-val red">₹2,80,000+</span></td>
+                            <td class="hide-mobile"><span class="price-val red">₹4,76,000+</span></td>
+                            <td><span class="price-val red">₹15,000+</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-container" id="pricing">
+            <div class="pricing-grid-wrapper">
+                <div class="pricing-grid">
+                    <!-- Column 1: Feature List -->
+                    <div class="pricing-col left-col">
+                        <div class="pricing-header-empty" style="justify-content: center;">
+                            <h2 class="compare-title">Major Features</h2>
+                        </div>
+                        <div class="feature-row">Optical Character Recognition</div>
+                        <div class="feature-row">Object Detection</div>
+                        <div class="feature-row">Emergency Services</div>
+                        <div class="feature-row">Language Support</div>
+                        <div class="feature-row">Navigation</div>
+                        <div class="feature-row">Messages</div>
+                        <div class="feature-row no-border">UPI Payment (Through App)</div>
+                    </div>
+
+                    <!-- Column 2: Standard Plan -->
+                    <div class="pricing-col center-col border-left border-right">
+                        <div class="pricing-header text-center" style="justify-content: center;">
+                            <h3 class="plan-name text-black">Standard (₹6,000)</h3>
+                        </div>
+                        <div class="plan-row text-center border-bottom"><span class="icon-check"></span></div>
+                        <div class="plan-row text-center border-bottom"><span class="icon-check"></span></div>
+                        <div class="plan-row text-center border-bottom"><span class="icon-check"></span></div>
+                        <div class="plan-row text-center border-bottom"><span class="icon-check"></span></div>
+                        <div class="plan-row text-center border-bottom text-black plan-text-large multiline-row">General
+                            Navigation<br><span>(Inc.
+                                directions, distance, ETA, etc)</span></div>
+                        <div class="plan-row text-center border-bottom text-black plan-text-large">
+                            20 / Day
+                        </div>
+                        <div class="plan-row text-center no-border text-black plan-text-large">2 /
+                            Day</div>
+                    </div>
+
+                    <!-- Column 3: Pro Plan -->
+                    <div class="pricing-col right-col bg-pro">
+                        <div class="pricing-header text-center" style="justify-content: center;">
+                            <h3 class="plan-name text-brand">Pro (₹8,000)</h3>
+                        </div>
+                        <div class="plan-row text-center border-bottom"><span class="icon-check"></span></div>
+                        <div class="plan-row text-center border-bottom"><span class="icon-check"></span></div>
+                        <div class="plan-row text-center border-bottom"><span class="icon-check"></span></div>
+                        <div class="plan-row text-center border-bottom"><span class="icon-check"></span></div>
+                        <div class="plan-row text-center border-bottom text-black plan-text-large multiline-row">Nearby
+                            Navigation<br><span>(E.g.,
+                                navigate to nearby hospital)</span></div>
+                        <div class="plan-row text-center border-bottom text-black plan-text-large">
+                            Unlimited
+                        </div>
+                        <div class="plan-row text-center no-border text-black plan-text-large">10 /
+                            Day
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-footer">
+                <p>Not sure which plan is right for you? <a href="#contact" class="text-brand">Contact our accessibility
+                        experts</a> for a free consultation.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pre-Footer -->
+    <div class="pre-footer">
+        <h2>Designed & Developed by <strong>4Bits</strong></h2>
+    </div>
+
+    <!-- Main Footer -->
+    <footer class="main-footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="favicon.png" alt="Netra Sathi Logo" class="footer-logo-img">
+                    <span>Netra Sathi</span>
+                </div>
+                <p>Affordable AI Powered Assistive ecosystem that provides independent mobility, safety and caregiver
+                    connectivity for visually impaired individuals.</p>
+            </div>
+
+            <div class="footer-links-container">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#highlights">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Netra Sathi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Glassmorphic Modal -->
+    <div class="modal-overlay" id="infoModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close dialog">&times;</button>
+            <h3 class="modal-title" id="modalTitle">Title</h3>
+            <div class="modal-body" id="modalBody">
+                <p>Content goes here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
