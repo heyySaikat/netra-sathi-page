@@ -97,16 +97,26 @@ function setupHeroCanvas(canvasId, seq1Frames, seq2Frames) {
     if (!canvas) return;
     const context = canvas.getContext('2d');
 
-    canvas.width = 1920;
-    canvas.height = 1080;
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+        canvas.width = 1080;
+        canvas.height = 1920;
+    } else {
+        canvas.width = 1920;
+        canvas.height = 1080;
+    }
 
     const totalFrames = seq1Frames + seq2Frames;
     const getFrameUrl = index => {
+        let dir1 = isMobile ? 'mobileSequence1' : 'heroSequence1';
+        let dir2 = isMobile ? 'mobileSequence2' : 'heroSequence2';
+
         if (index <= seq1Frames) {
-            return `./heroSequence1/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`;
+            return `./${dir1}/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`;
         } else {
             const seq2Index = index - seq1Frames;
-            return `./heroSequence2/ezgif-frame-${seq2Index.toString().padStart(3, '0')}.jpg`;
+            return `./${dir2}/ezgif-frame-${seq2Index.toString().padStart(3, '0')}.jpg`;
         }
     };
 
@@ -150,7 +160,15 @@ function setupHeroCanvas(canvasId, seq1Frames, seq2Frames) {
 
         const hRatio = canvas.width / img.width;
         const vRatio = canvas.height / img.height;
-        const ratio = Math.min(hRatio, vRatio); // contain logic to show full product
+
+        let ratio = Math.min(hRatio, vRatio); // contain logic to show full product
+
+        // Since the canvas is now portrait on mobile (1080x1920), 
+        // we can simply 'cover' the portrait bounds to maximize screen real estate.
+        if (isMobile) {
+            ratio = Math.max(hRatio, vRatio);
+        }
+
         const centerShift_x = (canvas.width - img.width * ratio) / 2;
         const centerShift_y = (canvas.height - img.height * ratio) / 2;
 
